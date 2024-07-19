@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface DocumentoRepository extends JpaRepository<Documento, Long> {
 
-    @Query("SELECT * FROM DOCUMENTO WHERE beneficiario = :beneficiario")
+    @Query("select d from Documento d where d.beneficiario = :beneficiario")
     public List<Documento> GetAllByBeneficiario(@Param("beneficiario") Long beficiario);
 }
